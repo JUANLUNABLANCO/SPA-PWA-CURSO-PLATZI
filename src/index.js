@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from '@components/App';
-// styles
-import '@styles/global.scss';
+import Router from './routes';
 
-ReactDOM.render( < App / > , document.getElementById('app'));
+window.addEventListener('load', Router);
+
+window.addEventListener('hashchange', Router);

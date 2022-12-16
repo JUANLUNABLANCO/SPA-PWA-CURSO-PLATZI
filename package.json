@@ -8,7 +8,7 @@
         "watch": "npm run dev -- --watch",
         "dev": "npm run clean && npx webpack --config webpack.config.dev.js",
         "build": "npm run clean && npx webpack --config webpack.config.prod.js",
-        "start:dev": "webpack serve --config webpack.config.dev.js",
+        "start:dev": "webpack-dev-server --config webpack.config.dev.js",
         "build:server": "node ./scripts/create-env.js && npx webpack --config webpack.config.prod.js",
         "analyzer:json": "npx webpack --profile --json > stats.json",
         "analyzer:web": "npx webpack-bundle-analyzer stats.json"
@@ -25,7 +25,7 @@
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/platzi/curso-webpack-react/issues"
+        "url": "https://github.com/JUANLUNABLANCO/SPA-PWA-CURSO-PLATZI/issues"
     },
     "devDependencies": {
         "@babel/core": "^7.20.5",

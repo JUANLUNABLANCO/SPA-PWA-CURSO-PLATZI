@@ -76,79 +76,161 @@ git config --global core.autocrlf true
 
 > git push origin main
 
+## antes de nada iremos ala documentación de nuestra API expuesta 
+
+https://rickandmortyapi.com/documentation
+
+GET https://rickandmortyapi.com/api
+{
+  "characters": "https://rickandmortyapi.com/api/character",
+  "locations": "https://rickandmortyapi.com/api/location",
+  "episodes": "https://rickandmortyapi.com/api/episode"
+}
+
+GET https://rickandmortyapi.com/api/character
+{
+  "info": {
+    "count": 826,
+    "pages": 42,
+    "next": "https://rickandmortyapi.com/api/character/?page=2",
+    "prev": null
+  },
+  "results": [
+    // ...
+  ]
+}
+
+GET https://rickandmortyapi.com/api/character/?page=19
+{
+  "info": {
+    "count": 826,
+    "pages": 42,
+    "next": "https://rickandmortyapi.com/api/character/?page=20",
+    "prev": "https://rickandmortyapi.com/api/character/?page=18"
+  },
+  "results": [
+    {
+      "id": 361,
+      "name": "Toxic Rick",
+      "status": "Dead",
+      "species": "Humanoid",
+      "type": "Rick's Toxic Side",
+      "gender": "Male",
+      "origin": {
+        "name": "Alien Spa",
+        "url": "https://rickandmortyapi.com/api/location/64"
+      },
+      "location": {
+        "name": "Earth",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/27"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/361",
+      "created": "2018-01-10T18:20:41.703Z"
+    },
+    // ...
+  ]
+}
+
+GET https://rickandmortyapi.com/api/character/2
+{
+  "id": 2,
+  "name": "Morty Smith",
+  "status": "Alive",
+  "species": "Human",
+  "type": "",
+  "gender": "Male",
+  "origin": {
+    "name": "Earth",
+    "url": "https://rickandmortyapi.com/api/location/1"
+  },
+  "location": {
+    "name": "Earth",
+    "url": "https://rickandmortyapi.com/api/location/20"
+  },
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "episode": [
+    "https://rickandmortyapi.com/api/episode/1",
+    "https://rickandmortyapi.com/api/episode/2",
+    // ...
+  ],
+  "url": "https://rickandmortyapi.com/api/character/2",
+  "created": "2017-11-04T18:50:21.651Z"
+}
+
+### Filter characters
+You can also include filters in the URL by including additional query parameters. To start filtering add a ? followed by the query <query>=<value>. If you want to chain several queries in the same call, use & followed by the query.
+
+For example, If you want to check how many alive Ricks exist, just add ?name=rick&status=alive to the URL.
+
+Available parameters:
+
+name: filter by the given name.
+status: filter by the given status (alive, dead or unknown).
+species: filter by the given species.
+type: filter by the given type.
+gender: filter by the given gender (female, male, genderless or unknown).
+
+GET https://rickandmortyapi.com/api/character/?name=rick&status=alive
+"info": {
+    "count": 29,
+    "pages": 2,
+    "next": "https://rickandmortyapi.com/api/character/?page=2&name=rick&status=alive",
+    "prev": null
+  },
+  "results": [
+    {
+      "id": 1,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "Earth",
+        "url": "https://rickandmortyapi.com/api/location/1"
+      },
+      "location": {
+        "name": "Earth",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/1",
+        "https://rickandmortyapi.com/api/episode/2",
+        //...
+      ],
+      "url": "https://rickandmortyapi.com/api/character/1",
+      "created": "2017-11-04T18:48:46.250Z"
+    },
+    // ...
+  ]
+}
+
+--- PARA SABER MAS VER DOCUMENTACION ---
+
+
 ## Inicializando proyecto
 
 > npm init
-### React instalations
-
-> npm install -S react react-dom  // dependencias de produccion
-
-### Otros
-
-> mkdir src
-> mkdir -p src/components
-
-crear el archivo App.jsx dentro de components
-
---- App.jsx ---
-
-  import React from 'react';
-
-  const App = () => <h1>Hello React!</h1>
-
-  export default App;
---- ---
----  index.js ---
-  import React from 'react';
-  import ReactDOM from 'react-dom';
-  import App from './components/App';
-
-  ReactDOM.render(<App />, document.getElementById('app'));
---- ---
-
-render coge un componente creado y lo inserta en el segundo parámetro
-
---- index.html ---
-  <!DOCTYPE html>
-  <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
-
-  <body>
-    <div id="app"></div>
-  </body>
-
-  </html>
---- ---
-
-Ya tenemos la app
 
 ## Instalaciones de babel y webpack
 
-> npm install @babel/core  @babel/preset-env @babel/preset-react babel-loader -D
+> npm install @babel/core  babel-loader @babel/preset-env -D
 
 > touch .babelrc
---- .baberc ---
+--- .babelrc ---
 {
   "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react"
+    "@babel/preset-env"
   ]
 }
 --- ---
 
-> npm install -D webpack webpack-cli webpack-dev-server
-
-## Frameworks librerias que funcionan con react
-
-https://es.reactjs.org/docs/create-a-new-react-app.html
-
-leer ese artículo del blog, es muy interesante
+> npm install -D webpack webpack-cli webpack-dev-server  html-webpack-plugin
 
 
 ## webpack instalations
@@ -202,6 +284,83 @@ module.exports = {
 > npm install -D rimraf
 > npm install -D webpack-bundle-analyzer
 > npm install dotenv-webpack
+
+
+## Archivos del proyecto
+
+--- Home.js ---
+const Home = () => {
+    const view = `
+    <div class="Characters">
+      <article class="Charcacter-item">
+        <a href="#/1/">
+          <img src="image" alt="name">
+          <h2>Name</h2>
+        </a>
+      </article>
+    </div>
+  `;
+    return view;
+}
+export default Home;
+--- ---
+
+Esta es la forma de crear un template con js, porque js con las `` entiende html y lo puede insertar en un elemento de tipo HTML Element, o un webcomponent
+
+para que js entienda html y nos complete y nos reconozca ese html, debemos configurar emmet en el apartado de languages includes y proponer { "javascript": "html" }
+
+Otro archivo importante es el index.js que recogerá el home y renderizará esa view en el main del HTML --> index.html, veámos cómo.
+
+
+--- index.js ---
+console.log("Hello world!"); // de momento esto es l oque contendrá
+--- ---
+
+y el index.html
+
+--- index.html ---
+...
+    <main class="Main" id="app">
+        <header class="Header" id="header"></header>
+        <section>
+            <div class="loading"></div>
+        </section>
+    </main>
+...
+--- ---
+
+--- routes/index.js ---
+import Header from '../templates/Header';
+import Home from '../Pages/Home';
+import Character from '../Pages/Character';
+import Error404 from '../Pages/Error404';
+
+// Objeto de rutas 
+const Routes = {
+    '/': Home,
+    '/:id': Character,
+    '/Contact': 'Contact'
+}
+
+const Router = async() => {
+    const header = null || document.getElementById('header');
+    const content = null || document.getElementById('content');
+
+    header.innerHTML = await Header();
+}
+
+Date cuenta de una cosa:
+  1. creas la configuracion del proyecto scaffolding, probar que funciona y tenemos un hello world en ocnsola
+  2. ahora estructura del src con los elementos básicos
+  3. templates staticos sin info real
+  4. router 
+  5. index.js que llamará al router y hará el render del header tras el window load, en elelemnto header
+  6. Manejo de rutas que se renderizarán en content
+  7. servicios que obtienen la data
+
+  
+
+
 
 ## Creación de ficheros necesarios para la subida anetlify
 
@@ -282,7 +441,7 @@ module.exports = {
 }
 --- ---
 
-## CSS para el proeycto
+## CSS para el proyecto
 
 > npm install -D mini-css-extract-plugin css-loader style-loader sass sass-loader
 

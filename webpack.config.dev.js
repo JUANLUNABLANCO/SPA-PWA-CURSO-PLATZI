@@ -11,17 +11,17 @@ module.exports = {
     },
     mode: "development",
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js'],
         alias: {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@styles': path.resolve(__dirname, 'src/styles/'),
-            // '@images': path.resolve(__dirname, 'src/assets/images/'),
-            // '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
+            '@images': path.resolve(__dirname, 'src/assets/images/'),
+            '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
         }
     },
     module: {
         rules: [{
-                test: /\.(js|jsx)$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -34,7 +34,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.s[ac]ss/,
+                test: /\.(s[ac]ss|css)/,
                 use: [
                     'style-loader',
                     'css-loader',
@@ -59,6 +59,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebapckPlugin({
+            inject: true,
             template: './public/index.html',
             filename: './index.html'
         }),
@@ -69,9 +70,11 @@ module.exports = {
     ],
     devServer: {
         static: path.join(__dirname, 'dist'),
+        watchFiles: ['src/**/*'],
         compress: true,
         historyApiFallback: true,
         port: 8080,
         open: true
-    }
+    },
+    devtool: "inline-source-map",
 }
