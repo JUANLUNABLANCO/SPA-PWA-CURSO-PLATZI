@@ -1,13 +1,13 @@
 import '@styles/main.css';
 import '@styles/global.scss';
 
-import Header from '../templates/Header';
-import Home from '../pages/Home';
-import Character from '../pages/Character';
-import Error404 from '../pages/Error404';
+import Header from '../templates/Header.js';
+import Home from '../pages/Home.js';
+import Character from '../pages/Character.js';
+import Error404 from '../pages/Error404.js';
 
-import getHash from '../utils/getHash';
-import resolveRoutes from '../utils/resolveRoutes';
+import getHash from '../utils/getHash.js';
+import resolveRoutes from '../utils/resolveRoutes.js';
 
 const Routes = {
     '/': Home,
