@@ -10,6 +10,7 @@
         "build": "npm run clean && npx webpack --config webpack.config.prod.js",
         "start:dev": "webpack-dev-server --config webpack.config.dev.js",
         "build:server": "node ./scripts/create-env.js && npx webpack --config webpack.config.prod.js",
+        "start:prod": "webpack-dev-server --config webpack.config.prod.js --port 8888",
         "analyzer:json": "npx webpack --profile --json > stats.json",
         "analyzer:web": "npx webpack-bundle-analyzer stats.json"
     },

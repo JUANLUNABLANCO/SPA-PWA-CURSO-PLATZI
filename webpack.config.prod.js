@@ -79,6 +79,5 @@ module.exports = {
             new CssMinimizerPlugin(),
             new TerserPlugin()
         ]
-    },
-    devtool: 'hidden-source-map',
+    }
 }
