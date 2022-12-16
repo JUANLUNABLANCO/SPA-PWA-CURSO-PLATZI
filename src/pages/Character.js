@@ -1,10 +1,10 @@
-import getHash from '../utils/getHash';
-import getData from '../services/getData';
+import getHash from '@utils/getHash';
+import getData from '@services/getData';
 
 const Character = async() => {
     const id = getHash();
     const character = await getData(id);
-    console.log(character);
+    // console.log(character);
 
     const view = `
     <div class="Characters-inner">

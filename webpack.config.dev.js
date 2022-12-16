@@ -17,6 +17,10 @@ module.exports = {
             '@styles': path.resolve(__dirname, 'src/styles/'),
             '@images': path.resolve(__dirname, 'src/assets/images/'),
             '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
+            '@templates': path.resolve(__dirname, 'src/templates/'),
+            '@pages': path.resolve(__dirname, 'src/pages/'),
+            '@utils': path.resolve(__dirname, 'src/utils/'),
+            '@services': path.resolve(__dirname, 'src/services/'),
         }
     },
     module: {

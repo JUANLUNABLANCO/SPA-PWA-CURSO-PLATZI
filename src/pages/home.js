@@ -1,4 +1,4 @@
-import getData from '../services/getData';
+import getData from '@services/getData';
 
 const Home = async() => {
 
@@ -16,7 +16,7 @@ const Home = async() => {
         `).join('')}
     </div>
   `;
-    console.log('######## view:', view);
+    // console.log('######## view:', view);
     return view;
 }
 export default Home;
