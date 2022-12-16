@@ -14,7 +14,7 @@ module.exports = {
     },
     mode: "production",
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js'],
         alias: {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@styles': path.resolve(__dirname, 'src/styles/'),
@@ -24,7 +24,7 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.(js|jsx)$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -37,7 +37,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.s[ac]ss/,
+                test: /\.(s[ac]ss|css)/,
                 use: [
                     'style-loader',
                     'css-loader',
@@ -80,5 +80,5 @@ module.exports = {
             new TerserPlugin()
         ]
     },
-    // devtool: 'hidden-source-map',
+    devtool: 'hidden-source-map',
 }

@@ -374,11 +374,11 @@ netlfiy.toml
 const fs = require('fs'); // fs = file system
 
 // fs.writeFileSync("path", `argumento a crear`);
-fs.writeFileSync("./.env", `ALGO=${process.env.ALGO}\n`);
+fs.writeFileSync("./.env", `API=${process.env.API}\n`);
 --- ---
 
 --- .env ---
-ALGO=ALGO
+API="..."
 --- ---
 
 --- netlify.toml---
@@ -386,7 +386,7 @@ ALGO=ALGO
   publish = "dist"
   command = "npm run build:server"
 --- ---
-
+no olvides definir la variable de entorno API, en la configuración de netlify 
 
 
 ## Plugins y loaders para react con webpack
