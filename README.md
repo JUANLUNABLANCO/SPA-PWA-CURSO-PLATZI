@@ -6,7 +6,7 @@
 <br/>
 
 
-## CONTENIDOS
+## CONTENIDOS DE ESTE CURSO
 * [INSTALACIONES DE ESTE PROYECTO](#LINK0)
 * [INTRODUCCION A LOS MODULOS EN JS](#LINK1)
 * [WEBPACK + REACT  TUTORIAL](#LINK2)
@@ -444,7 +444,15 @@ no olvides definir la variable de entorno API, en la configuración de netlify
 
 
 <a name="LINK1"></a>
+
 ## INTRODUCCION A LOS MODULOS EN JS
+
+### CONTENIDOS DE ESTE CURSO
+* [INSTALACIONES DE ESTE PROYECTO](#LINK0)
+* [INTRODUCCION A LOS MODULOS EN JS](#LINK1)
+* [WEBPACK + REACT  TUTORIAL](#LINK2)
+* [WEBPACK + VANILLA JS TUTORIAL](#LINK3)
+
 
 A medida que nuestra aplicación crece, queremos dividirla en múltiples archivos, llamados “módulos”. Un módulo puede contener una clase o una biblioteca de funciones para un propósito específico.
 
@@ -834,8 +842,11 @@ En la producción, las personas a menudo usan paquetes como Webpack para agrupar
 
 ## REACT + WEBPACK TUTORIAL
 
-// WARNING si no usas react solo vanilla js pincha en el enlace
-[WEBPACK + VANILLA JS TUTORIAL](#LINK3)
+### CONTENIDOS DE ESTE CURSO
+* [INSTALACIONES DE ESTE PROYECTO](#LINK0)
+* [INTRODUCCION A LOS MODULOS EN JS](#LINK1)
+* [WEBPACK + REACT  TUTORIAL](#LINK2)
+* [WEBPACK + VANILLA JS TUTORIAL](#LINK3)
 
 ## Plugins y loaders para react con webpack
 
@@ -973,6 +984,12 @@ me gusta más netlify
 ## TUTORIAL WEBPACK + JS COMPLETO Y SENCILLO
 
 https://github.com/forkrintt/vanilla-js-boilerplate
+
+### CONTENIDOS DE ESTE CURSO
+* [INSTALACIONES DE ESTE PROYECTO](#LINK0)
+* [INTRODUCCION A LOS MODULOS EN JS](#LINK1)
+* [WEBPACK + REACT  TUTORIAL](#LINK2)
+* [WEBPACK + VANILLA JS TUTORIAL](#LINK3)
 
 
 # Webpack 4 Boilerplate
