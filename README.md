@@ -455,3 +455,6 @@ Ver los archivos: webpack.config.dev.js && webpack.config.prod.js
 así como el package.json
 
 
+## TUTORIAL WEBPACK COMPLETO Y SENCILLO
+
+https://github.com/forkrintt/vanilla-js-boilerplate
