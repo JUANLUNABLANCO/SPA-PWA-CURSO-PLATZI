@@ -7,10 +7,10 @@
 
 ## Instalaciones necesarias y configuración
 ### Genéricas
-git init
-git config --local user.email "desarrolloaplicacionesweb.jmlb@gmail.com"
-git config --local user.name "JUANLUNABLANCO"
-git branch -M  main
+> git init
+> git config --local user.email "desarrolloaplicacionesweb.jmlb@gmail.com"
+> git config --local user.name "JUANLUNABLANCO"
+> git branch -M  main
 
 En este punto debes crear un repositorio nuevo en github vacío y enlazarlo
 
