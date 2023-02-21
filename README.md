@@ -7,23 +7,37 @@
 
 ## Instalaciones necesarias y configuración
 ### Genéricas
-> git init
-> git config --local user.email "desarrolloaplicacionesweb.jmlb@gmail.com"
-> git config --local user.name "JUANLUNABLANCO"
-> git branch -M  main
 
+console:
+``` 
+git init
+git config --local user.email "desarrolloaplicacionesweb.jmlb@gmail.com"
+git config --local user.name "JUANLUNABLANCO"
+git branch -M  main
+```
 En este punto debes crear un repositorio nuevo en github vacío y enlazarlo
 
+console:
 <!-- > git remote add origin https://github.com/JUANLUNABLANCO/<tu-repo>.git -->
-git remote add origin https://github.com/JUANLUNABLANCO/SPA-PWA-CURSO-PLATZI.git
-> git config --list
-git add .
-git commit -m "scaffolding project with webpack"
-git push -u origin main
+```
+ git remote add origin https://github.com/JUANLUNABLANCO/SPA-PWA-CURSO-PLATZI.git
+ git config --list
+ git add .
+ git commit -m "scaffolding project with webpack"
+ git push -u origin main
+```
+
+## CONTENIDOS
+* [WEBPACK + REACT  TUTORIAL](#LINK1)
+* [WEBPACK + VANILLA JS TUTORIAL](#LINK2)
+
 
 ### Un inciso con los eol de git
 
+console:
+```
 git config --global core.autocrlf true
+```
 
 
 .gitattributes
@@ -72,11 +86,14 @@ git config --global core.autocrlf true
 *.exe filter=lfs diff=lfs merge=lfs -text
 ```
 
-> git add --renormalize .
+console:
+```
+git add --renormalize .
 
-> git commit -m "Renormalizing eofile eolines"
+git commit -m "Renormalizing eofile eolines"
 
-> git push origin main
+git push origin main
+```
 
 ## antes de nada iremos ala documentación de nuestra API expuesta 
 
@@ -220,14 +237,19 @@ PARA SABER MAS VER DOCUMENTACION
 
 ## Inicializando proyecto
 
-> npm init
+console:
+```
+npm init
+```
 
 ## Instalaciones de babel y webpack
 
-> npm install @babel/core  babel-loader @babel/preset-env -D
+console:
+```
+npm install @babel/core  babel-loader @babel/preset-env -D
 
-> touch .babelrc
-
+touch .babelrc
+```
 
 .babelrc
 ```
@@ -238,8 +260,10 @@ PARA SABER MAS VER DOCUMENTACION
 }
 ```
 
-> npm install -D webpack webpack-cli webpack-dev-server  html-webpack-plugin
-
+console:
+```
+npm install -D webpack webpack-cli webpack-dev-server  html-webpack-plugin
+```
 
 ## webpack instalations
 
@@ -292,10 +316,12 @@ module.exports = {
     },
 ```
 
-> npm install -D rimraf
-> npm install -D webpack-bundle-analyzer
-> npm install dotenv-webpack
-
+console:
+```
+npm install -D rimraf
+npm install -D webpack-bundle-analyzer
+npm install dotenv-webpack
+```
 
 ## Archivos del proyecto
 
@@ -368,7 +394,7 @@ const Router = async() => {
 ```
 
 Date cuenta de una cosa:
-  1. creas la configuracion del proyecto scaffolding, probar que funciona y tenemos un hello world en ocnsola
+  1. creas la configuracion del proyecto scaffolding, probar que funciona y tenemos un hello world en consola
   2. ahora estructura del src con los elementos básicos
   3. templates staticos sin info real
   4. router 
@@ -386,8 +412,8 @@ scripts/create-env.js
 .env
 netlfiy.toml
 
-scripts/create-env.js
 
+scripts/create-env.js
 ```
 // **create-env.js**
 
@@ -412,6 +438,12 @@ netlify.toml
 
 no olvides definir la variable de entorno API, en la configuración de netlify 
 
+
+<a name="LINK1"></a>
+## REACT + WEBPACK TUTORIAL
+
+// WARNING si no usas react solo vanilla js pincha en el enlace
+[WEBPACK + VANILLA JS TUTORIAL](#LINK2)
 
 ## Plugins y loaders para react con webpack
 
@@ -540,7 +572,12 @@ desde travis, una vez runnning this trigger se genera una nueva rama en el proye
 me gusta más netlify
 
 
-## TUTORIAL WEBPACK COMPLETO Y SENCILLO
+
+
+
+
+<a name="LINK2"></a>
+## TUTORIAL WEBPACK + JS COMPLETO Y SENCILLO
 
 https://github.com/forkrintt/vanilla-js-boilerplate
 
